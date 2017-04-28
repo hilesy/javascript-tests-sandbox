@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
 "scripts": {
-    "test": "node_modules/grunt-cli/bin/grunt"
+    "test": "grunt",
+    "cucumber": "cucumber-js",
+    "startServer": "appium -a 127.0.0.1 -p 4723 --no-reset"
   },
    "author": "Lizzie Hiles",
    "license": "ISC",
    
   "devDependencies": {
-    "cucumber": "^1.3.2",
+    "cucumber": "^0.10.2",
     "selenium-webdriver": "^2.53.2",
     "chai": "^3.5.0",
     "grunt": "^1.0.1",
