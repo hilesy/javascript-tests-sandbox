@@ -3,6 +3,8 @@
 var fs = require('fs')
 var webdriver = require('selenium-webdriver')
 var platform = process.env.PLATFORM || 'FIREFOX'
+const until = webdriver.until
+const WAIT_FOR_ELEMENT_TIMEOUT = 10 * 1000
 
 var buildAndroidDriver = function () {
   return new webdriver.Builder().usingServer('http://localhost:4723/wd/hub').withCapabilities({
@@ -52,6 +54,14 @@ var World = function World () {
     return driver.wait(function () {
       return driver.isElementPresent({ css: cssLocator })
     }, waitTimeout)
+  }
+
+  this.getElement = function (locator, timeout) {
+    return driver
+        .wait(
+          until.elementLocated(locator),
+          timeout * 1000 || WAIT_FOR_ELEMENT_TIMEOUT
+        )
   }
 }
 

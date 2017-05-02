@@ -1,8 +1,8 @@
-Feature: Searching for cucumbers
-  As an internet user
-  In order to find out more about cucumbers
-  I want to be able to search for information about cucumbers
+Feature: Searching for batteries
+  As an Argos customer
+  In order to buy batteries
+  I want to be able to search for information about batteries
   
-  Scenario: Google cucumber search
-    When I search Google for "cucumbers"
+  Scenario: Argos batteries search
+    When I search Argos for "batteries"
     Then I should see some results

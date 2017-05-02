@@ -21,8 +21,8 @@ module.exports = function (grunt) {
       all: ['Gruntfile.js', 'features/step_definitions/*.js', 'features/support/*.js'],
       options: {
         node: true,
-        strict: true,
-        globalstrict: true,
+        strict: false,
+        globalstrict: false,
         asi: true
       }
     },
