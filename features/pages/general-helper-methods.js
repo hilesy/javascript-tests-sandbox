@@ -1,20 +1,27 @@
 'use strict'
 
-const driver = require('../support/world.js').world
+const driver = require('../support/driver-builder.js').getDriver()
 
 module.exports = {
   clickElement: function (xpath) {
     const path = xpath
-    return driver.click({xpath: path})
+    return driver.findElement({xpath: path}).then(function (webElement) {
+      webElement.click()
+    })
   },
 
   inputFieldValue: function (xpath, value) {
     const path = xpath
-    return driver.sendKeys({xpath: path, value})
+    return driver.findElement({xpath: path}).then(function (webElement) {
+      return webElement.clear().then(function () {
+        return webElement.sendKeys(value)
+      })
+    })
   },
 
   getElement: function (xpath) {
     const path = xpath
-    return driver.getElement({xpath: path})
+    return driver.findElement(({xpath: path}), 10 * 1000).then(function () {
+    })
   }
 }
