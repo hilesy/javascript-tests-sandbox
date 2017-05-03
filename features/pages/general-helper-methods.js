@@ -21,7 +21,11 @@ module.exports = {
 
   getElement: function (xpath) {
     const path = xpath
-    return driver.findElement(({xpath: path}), 10 * 1000).then(function () {
-    })
+    return driver.findElement(({xpath: path}), 10 * 1000)
+  },
+
+  findElements: function (xpath) {
+    const path = xpath
+    return driver.findElements(({xpath: path}), 10 * 1000)
   }
 }

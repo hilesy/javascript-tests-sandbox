@@ -13,7 +13,7 @@ module.exports = function () {
   })
 
   this.Then(/^I should see some results$/, function () {
-    return generalHelperMethods.findElements({ xpath: '//*[@id="app"]' })
+    return generalHelperMethods.findElements('//*[@id="products"]')
       .then(function (elements) {
         expect(elements.length).to.not.equal(0)
       })
