@@ -31,6 +31,15 @@ module.exports = function (grunt) {
       run_cucumber_tests: {
         command: 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty -t ~@ignore')
       }
+    },
+
+    cucumberjs: {
+      options: {
+        format: 'html',
+        output: './public/report.html',
+        theme: 'foundation'
+      },
+      features: []
     }
 
   })
@@ -38,6 +47,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint')
   grunt.loadNpmTasks('grunt-exec')
   grunt.loadNpmTasks('grunt-env')
+  grunt.loadNpmTasks('grunt-cucumberjs')
 
   grunt.registerTask('default', ['jshint', 'exec'])
   grunt.registerTask('chrome', ['env:chrome', 'jshint', 'exec'])

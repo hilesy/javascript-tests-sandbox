@@ -3,24 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "test": "grunt",
     "cucumber": "cucumber-js",
     "startServer": "appium -a 127.0.0.1 -p 4723 --no-reset"
   },
-   "author": "Lizzie Hiles",
-   "license": "ISC",
-   
+  "author": "Lizzie Hiles",
+  "license": "ISC",
   "devDependencies": {
-    "cucumber": "^0.10.2",
-    "selenium-webdriver": "^2.53.2",
+    "appium": "^1.5.2",
     "chai": "^3.5.0",
+    "cucumber": "^0.10.2",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-jshint": "^1.1.0",
-    "grunt-exec": "^0.4.7",
+    "grunt-cucumberjs": "^1.0.0",
     "grunt-env": "^0.4.4",
+    "grunt-exec": "^0.4.7",
     "sanitize-filename": "^1.6.0",
-    "appium": "^1.5.2"
+    "selenium-webdriver": "^2.53.2"
   }
 }
