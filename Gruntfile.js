@@ -37,7 +37,7 @@ module.exports = function (grunt) {
       options: {
         format: 'html',
         output: './public/report.html',
-        theme: 'foundation'
+        theme: 'bootstrap'
       },
       features: []
     }
