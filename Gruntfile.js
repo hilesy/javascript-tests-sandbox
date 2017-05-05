@@ -33,10 +33,16 @@ module.exports = function (grunt) {
       }
     },
 
+    // Before generating any new files, remove any previously created files
+    clean: {
+      tests: ['public/report', 'screenshots']
+    },
+
+    // Generates HTML report
     cucumberjs: {
       options: {
         format: 'html',
-        output: './public/report.html',
+        output: './public/report/report.html',
         theme: 'bootstrap'
       },
       features: []
@@ -48,6 +54,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-exec')
   grunt.loadNpmTasks('grunt-env')
   grunt.loadNpmTasks('grunt-cucumberjs')
+  grunt.loadNpmTasks('grunt-contrib-clean')
 
   grunt.registerTask('default', ['jshint', 'exec'])
   grunt.registerTask('chrome', ['env:chrome', 'jshint', 'exec'])
