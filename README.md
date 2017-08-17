@@ -19,8 +19,8 @@ In Terminal mode, enter vi ~/.bash_profile, and then press Enter.
 Press i to insert text into your profile file.
 Enter these lines:
 
-```export SAUCE_USERNAME=“<USERNAME"
-export SAUCE_ACCESS_KEY="<ACCESSKEY"```
+```export SAUCE_USERNAME=“<USERNAME">```
+```export SAUCE_ACCESS_KEY="<ACCESSKEY">```
 
 Press Escape.
 Hold Shift and press Z twice (z z) to save your file and quit vi.
