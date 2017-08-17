@@ -7,7 +7,7 @@ var webdriver = require('selenium-webdriver'),
 
 var buildSauceLabsDriver = function () {
   return new webdriver.Builder().usingServer("http://" + username + ":" + accessKey +
-              "@ondemand.saucelabs.com:80/wd/hub").withCapabilities({
+              "@ondemand.saucelabs.com").withCapabilities({
     browserName: 'Firefox',
     platform: 'Windows 10',
     version: '54.0',
