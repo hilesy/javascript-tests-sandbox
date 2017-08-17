@@ -1,7 +1,20 @@
 'use strict'
 
-var webdriver = require('selenium-webdriver')
-var platform = process.env.PLATFORM || 'FIREFOX'
+var webdriver = require('selenium-webdriver'),
+    platform = process.env.PLATFORM || 'SAUCELABS',
+    username = "lizziehiles2110",
+    accessKey = "a355568e-fd7a-4a9f-b776-fd3453caf9ca"
+
+var buildSauceLabsDriver = function () {
+  return new webdriver.Builder().usingServer("http://" + username + ":" + accessKey +
+              "@ondemand.saucelabs.com:80/wd/hub").withCapabilities({
+    browserName: 'Firefox',
+    platform: 'Windows 10',
+    version: '54.0',
+    username: username,
+    accessKey: accessKey
+  }).build();
+}
 
 var buildAndroidDriver = function () {
   return new webdriver.Builder().usingServer('http://localhost:4723/wd/hub').withCapabilities({
@@ -25,6 +38,8 @@ var buildFirefoxDriver = function () {
 }
 
 switch (platform) {
+  case 'SAUCELABS':
+    var driver = buildSauceLabsDriver()
   case 'ANDROID':
     var driver = buildAndroidDriver()
     break
