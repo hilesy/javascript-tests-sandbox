@@ -5,11 +5,11 @@ To run the tests on chrome, you will need to first make sure you have Chrome Dri
 Appium:
 To run the tests on a mobile device, you will need to first make sure you have Android Studio installed and added to your path. You will also need to make sure USB debugging is enabaled in Developer Options on your device. Next start the app server:
 
-'npm run startServer'
+```'npm run startServer'```
 
 In a seperate terminal, you can run your tests using:
 
-'npm run test'.
+```'npm run test'```
 
 
 Saucelabs
@@ -28,7 +28,7 @@ Hold Shift and press Z twice (z z) to save your file and quit vi.
 In the terminal, enter source ~/.bash_profile.
 
 
-DOWNLOAD SOURCE CONNECT
+TO RUN TESTS IN PARALELL ON SAUCELABS DOWNLOAD SOURCE CONNECT
 WHEN YOU HAVE DOWNLOADED SOURCE CONNECT RUN THE FOLLOWING IN DOWNLOAD PATH (MAC):
 ```bin/sc -u <username> -k <accesskey>```
 
