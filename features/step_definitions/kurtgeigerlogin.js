@@ -4,11 +4,22 @@ var expect = require('chai').expect
 var generalHelperMethods = require('../pages/general-helper-methods.js')
 
 module.exports = function () {
-  this.When(/^I log in to kurt geiger$/, function () {
- //TODO
+  this.Given(/^I am on the Kurt Geiger home page$/, () => {
+    return generalHelperMethods.getElement('//*[@id="logo"]')
   })
-
-  this.Then(/^I should be logged in$/, function () {
-    //TODO
+  this.When(/^I click "Login"$/, () => {
+    return generalHelperMethods.clickElement('//*[@id="ss17-wrapLinksSearch"]/ul/li[7]/a')
+  }) 
+  this.When(/^I enter my email address and password and continue$/, () => {
+    return generalHelperMethods.getElement('//*[@id="email"]').then(() => {
+      return generalHelperMethods.inputFieldValue('//*[@id="email"]', 'lizzie.hiles@hotmail.co.uk').then(() => {
+       // return generalHelperMethods.getElement()
       })
+    })
+  })
 }
+
+
+
+
+

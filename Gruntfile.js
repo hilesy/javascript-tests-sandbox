@@ -23,7 +23,8 @@ module.exports = function (grunt) {
         node: true,
         strict: false,
         globalstrict: false,
-        asi: true
+        asi: true,
+        esversion: 6
       }
     },
 

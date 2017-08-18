@@ -5,11 +5,19 @@ var path = require('path')
 var sanitize = require('sanitize-filename')
 var driver = require('./driver-builder.js').getDriver()
 
+
+
 var myHooks = function () {
   // Before Feature Hook to open webpage
   this.Before('BeforeFeature', function (event, callback) {
-    driver.get('http://www.kurtgeiger.com').then(callback, function (reason) {
+  driver.get('http://www.kurtgeiger.com').then(() => {
+    return driver.manage().addCookie("noWelcomePopup", "12387").then(() => {
+      //return driver.manage().window().maximize().then(() => {
+    return driver.get('http://www.kurtgeiger.com').then(callback, function (reason) {
       throw new Error(reason)
+     // })
+        })
+      })
     })
   })
 

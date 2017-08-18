@@ -1,5 +1,6 @@
 Feature: Log in
   
   Scenario: log in
-    When I log in to kurt geiger
-    Then I should be logged in
+    Given I am on the Kurt Geiger home page
+    When I click "Login"
+    When I enter my email address and password and continue
