@@ -15,8 +15,8 @@ var myHooks = function () {
       //return driver.manage().window().maximize().then(() => {
     return driver.get('http://www.kurtgeiger.com').then(callback, function (reason) {
       throw new Error(reason)
-     // })
-        })
+      })
+    //    })
       })
     })
   })
