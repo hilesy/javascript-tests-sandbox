@@ -24,6 +24,7 @@ var buildAndroidDriver = function () {
     platformVersion: '10.3',
     deviceName: 'iPhone 6',
     browserName: 'Safari'
+   // udid: '3b7c61b30d8424d4fce9d74370fb2f8952709aa4'
   }).build()
 }
 
