@@ -28,15 +28,6 @@ var buildAndroidDriver = function () {
   }).build()
 }
 
-// var buildAndroidDriver = function () {
-//   return new webdriver.Builder().usingServer('http://localhost:4723/wd/hub').withCapabilities({
-//     platformName: 'Android',
-//     platformVersion: '5.1',
-//     deviceName: 'Android Emulator',
-//     browserName: 'Chrome'
-//   }).build()
-// }
-
 var getDriver = function () {
   return driver
 }
@@ -50,9 +41,6 @@ var buildFirefoxDriver = function () {
 }
 
 switch (platform) {
-  // case 'SAUCELABS':
-  //   var driver = buildSauceLabsDriver()
-  //   break
   case 'ANDROID':
     var driver = buildAndroidDriver()
     break

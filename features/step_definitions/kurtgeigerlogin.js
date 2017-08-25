@@ -16,11 +16,7 @@ this.When(/^I click "Login"$/, () => {
 }) 
   this.When(/^I enter my email address and password and continue$/, () => {
     return generalHelperMethods.getElement('input-text required-entry validate-email').then(() => {
-      return generalHelperMethods.inputFieldValue('input-text required-entry validate-email', 'lizzie.hiles@hotmail.co.uk').then(() => {
-       return generalHelperMethods.getElement('input-text required-entry validate-email').then((text) => {
-        expect(text).to.equal('lizzie.hiles@hotmail.co.uk');
-       })
-      })
+      return generalHelperMethods.inputFieldValue('input-text required-entry validate-email', 'lizzie.hiles@hotmail.co.uk')
     })
   })
 }

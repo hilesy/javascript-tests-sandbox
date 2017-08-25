@@ -19,17 +19,8 @@ module.exports = {
     })
   },
 
-  scroll : function () {
-    return driver.execute('mobile: scroll', {direction: 'down'})
-  },
-
   getElement: function (className) {
     const path = className
     return driver.findElement(({className: path}), 10 * 1000)
   },
-
-  findElements: function (xpath) {
-    const path = xpath
-    return driver.findElements(({xpath: path}), 10 * 1000)
-  }
 }
