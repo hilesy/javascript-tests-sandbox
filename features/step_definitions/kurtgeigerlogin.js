@@ -8,7 +8,6 @@ module.exports = function () {
       return generalHelperMethods.getElement('ss17_logo ss17_logo--header')
   })
 this.When(/^I click "Login"$/, () => {
-    //const element = generalHelperMethods.getElement('#nav > li.resp-only.parent.sign-in > a')
     return generalHelperMethods.clickElement('skiplinks_icon menu-icon').then(() => {
       return driver.sleep(1000).then(() => {
         return generalHelperMethods.clickElement('resp-only parent sign-in')
@@ -18,7 +17,9 @@ this.When(/^I click "Login"$/, () => {
   this.When(/^I enter my email address and password and continue$/, () => {
     return generalHelperMethods.getElement('input-text required-entry validate-email').then(() => {
       return generalHelperMethods.inputFieldValue('input-text required-entry validate-email', 'lizzie.hiles@hotmail.co.uk').then(() => {
-       // return generalHelperMethods.getElement()
+       return generalHelperMethods.getElement('input-text required-entry validate-email').then((text) => {
+        expect(text).to.equal('lizzie.hiles@hotmail.co.uk');
+       })
       })
     })
   })
