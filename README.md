@@ -1,18 +1,30 @@
-Chrome driver:
-To run the tests on chrome, you will need to first make sure you have Chrome Driver installed and added to your path.
+To get the automation suite up and running, 
+1) Clone the project using ```https://github.com/hilesy/javascript-tests-sandbox.git```
+2) Install the dependancies using ```npm install``` at the root.
 
 
-Appium:
-To run the tests on a mobile device, you will need to first make sure you have Android Studio installed and added to your path. You will also need to make sure USB debugging is enabaled in Developer Options on your device. Next start the app server:
+Running the suite on a mobile device.
+To make sure you have all the dependancies installed for appium you can run the following commands: 
+```appium-doctor --ios```
+```appium-doctor --android```
+```appium-doctor --dev```
+This will tell you any outstanding set up which needs to be completed before you can run appium.
 
-```'npm run startServer'```
+Running tests on an android device:
+First you will need to make sure you have Android Studio installed and added to your path. You will also need to make sure USB debugging is enabled in Developer Options on your device.
+In the root of the project start the app server using ```npm run startServer```
+If everything is ok you should see a message like 'Appium REST http interface listener started on 127.0.0.1:4723'.
+Keeping the server terminal open, in a new terminal tab you can run your tests using one of the following commands:
+```npm run test``` which will run javascript linting and cucumber tests
+```npm run cucumber``` which will run cucumber tests only
+```npm run runReport``` which will run the cucumber tests, generate a report and also take any screenshots if a test has failed.
 
-In a seperate terminal, you can run your tests using:
 
-```'npm run test'```
+Running tests on iOS device:
+(TODO)
 
-
-Saucelabs
+Running tests on Saucelabs
+(TODO)
 to connect to saucelabs tunnel: add saucelabs credentials to path by doing the following:
 
 In Terminal mode, enter vi ~/.bash_profile, and then press Enter.
