@@ -3,7 +3,7 @@ To get the automation suite up and running,
 2) Install the dependancies using ```npm install``` at the root.
 
 
-Running the suite on a mobile device.
+Running the suite on a mobile device:  
 To make sure you have all the dependancies installed for appium you can run the following commands: 
 ```appium-doctor --ios```  
 ```appium-doctor --android```  
