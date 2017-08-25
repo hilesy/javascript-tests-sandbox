@@ -4,7 +4,7 @@ To get the automation suite up and running,
 
 
 Running the suite on a mobile device:  
-To make sure you have all the dependancies installed for appium you can run the following commands: 
+To make sure you have all the dependancies installed for appium you can run the following commands:   
 ```appium-doctor --ios```  
 ```appium-doctor --android```  
 ```appium-doctor --dev```  
