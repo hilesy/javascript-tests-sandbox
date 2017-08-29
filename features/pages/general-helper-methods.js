@@ -5,22 +5,16 @@ const driver = require('../support/driver-builder.js').getDriver()
 module.exports = {
   clickElement: function (className) {
     const path = className
-    return driver.findElement({className: path}).then((webElement) => {
-      webElement.click()
-    })
+    driver.findElement({className: path}).click()
   },
 
   inputFieldValue: function (className, value) {
     const path = className
-    return driver.findElement({className: path}).then(function (webElement) {
-      return webElement.clear().then(function () {
-        return webElement.sendKeys(value)
-      })
-    })
+    driver.findElement({className: path}).clear()
+    driver.findElement({className: path}).sendKeys(value)
   },
-
   getElement: function (className) {
     const path = className
-    return driver.findElement(({className: path}), 10 * 1000)
+    driver.findElement(({className: path}), 10 * 1000)
   },
 }
