@@ -6,7 +6,7 @@
   "scripts": {
     "test": "grunt",
     "cucumber": "cucumber-js",
-    "runReport": "grunt clean && grunt cucumberjs",
+    "runReport": "grunt clean && grunt cucumberjs && cucumberjs",
     "startServer": "appium -a 127.0.0.1 -p 4723 --no-reset"
   },
   "author": "Lizzie Hiles",
@@ -14,6 +14,7 @@
   "devDependencies": {
     "appium": "^1.5.2",
     "chai": "^3.5.0",
+    "chromedriver": "^2.31.0",
     "cucumber": "^0.10.2",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",

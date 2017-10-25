@@ -1,24 +1,20 @@
 'use strict'
 var expect = require('chai').expect
-const driver = require('../support/driver-builder.js').getDriver()
-var generalHelperMethods = require('../pages/general-helper-methods.js')
+var loginPage = require('../pages/loginPage.js')
+var search = require('../pages/search.js')
 
 module.exports = function () {
-  this.Given(/^I am on the Kurt Geiger home page$/, () => {
-    generalHelperMethods.getElement('ss17_logo ss17_logo--header')
-  })
-this.When(/^I click "Login"$/, () => {
-    generalHelperMethods.clickElement('skiplinks_icon menu-icon')
-    driver.sleep(1000)
-    generalHelperMethods.clickElement('resp-only parent sign-in')
+this.Given(/^I log in to the multi channel app$/, () => {
+  loginPage.inputUserName()
+  loginPage.inputPassword()
+  loginPage.clickSignIn()
+  loginPage.selectUser()
+})
+
+this.When(/^I search for a random product$/, () => {
+	search.clickSearch()
 }) 
-  this.When(/^I enter my email address and password and continue$/, () => {
-    generalHelperMethods.getElement('input-text required-entry validate-email')
-    generalHelperMethods.inputFieldValue('input-text required-entry validate-email', 'lizzie.hiles@hotmail.co.uk')
-    })
+
+this.When(/^I should see a list of items$/, () => {
+})
 }
-
-
-
-
-

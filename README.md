@@ -36,6 +36,9 @@ Running the tests on iOS real device:
 
 
 Running tests on Saucelabs  
+
+Some configuration needed in the driver-builder js file needed. Comment out the driver builder functions to enable running on saucelabs. You will also need to add details of the saucelabs device you wish to run the tests on. You can run the tests concurrently or on their own. To run concurrently you will need to connect to the saucelabs tunnel. To run on their own you dont need to connect to tunnel. 
+Need to figure out how to run the tests on appium/saucelabs integration. 
 (TODO)
 to connect to saucelabs tunnel: add saucelabs credentials to path by doing the following:
 

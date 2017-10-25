@@ -1,10 +1,14 @@
 'use strict'
 
 var webdriver = require('selenium-webdriver'),
-   platform = process.env.PLATFORM || 'ANDROID'
-    // username = "lizziehiles2110",
-    // accessKey = "a355568e-fd7a-4a9f-b776-fd3453caf9ca",
-    // driver;
+   platform = process.env.PLATFORM || 'ANDROID',
+    username = "lizziehiles2110",
+    accessKey = "a355568e-fd7a-4a9f-b776-fd3453caf9ca",
+    driver;
+
+  var getDriver = function () {
+    return driver
+}
  
 // driver = new webdriver.Builder().
 //   withCapabilities({
@@ -21,15 +25,12 @@ var webdriver = require('selenium-webdriver'),
 var buildAndroidDriver = function () {
   return new webdriver.Builder().usingServer('http://localhost:4723/wd/hub').withCapabilities({
     platformName: 'iOS',
-    platformVersion: '10.3',
-    deviceName: 'iPhone 6',
-    browserName: 'Safari'
-   // udid: '3b7c61b30d8424d4fce9d74370fb2f8952709aa4'
+    platformVersion: '10.2.1',
+    deviceName: 'KG iPhone 6S 2017',
+    browserName: 'Safari',
+    udid: 'd053313f62447d51317a89857fbf6e9075c3433b',
+    safariInitialUrl: 'https://demo-multichannel-core.multichannel.kg/'
   }).build()
-}
-
-var getDriver = function () {
-  return driver
 }
 
 var buildChromeDriver = function () {
