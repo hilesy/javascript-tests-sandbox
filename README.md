@@ -31,8 +31,32 @@ Keeping the server terminal open, in a new terminal tab you can run your tests u
 ```npm run runReport``` which will run the cucumber tests, generate a report and also take any screenshots if a test has failed.  
 When you run the tests, you should see the xcode simulator running on your desktop.   
 
+
 Running the tests on iOS real device:  
-(TODO)
+Pre-reqs: 
+- Apple Developer Account : To run the tests on Safari on an iOS device you will need an Apple Developer account. Once you've set up your Apple Developer account you will need to register the device you are running onto the Apple portal. 
+You will also need to create a provisioning profile and an App ID. Instructions on how to set these up are here:
+https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html
+- In the driver-builder file you will need to amend the details of your device under the buildSafariDriver to match the device & developer details
+- Next you will need to make some config changes to the WebDriverAgent in Appium to allow permissions from the Apple Developer account to access the device. 
+- Open terminal & open the the WebDriverAgent folder:
+- /usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent
+
+Run the following 2 commands:
+- mkdir -p Resources/WebDriverAgent.bundle
+- bash ./Scripts/bootstrap.sh -d
+
+Open the Xcode project (Under the WebDriverAgent folder) 
+- Make sure that the device under testing is connected
+- Sign the WebDriverLib & the WebDriverAgent.
+- update the bundle identifier to a unique string
+- Run the builds for WebDriverLib and WebDriverAgent to make sure they are successful.
+- (You may need to do the same for Safari-Launcher)
+
+In the root of the project start the appium app server using ```npm run startServer```  
+In a new tab start the ios_webkit_debug_proxy_server using ```npm run startIos``` << (you will need to change the id in the package.json) to match the id of the device you're using.
+In in a new tab you can run the tests as before using npm run test.
+
 
 
 Running tests on Saucelabs  
