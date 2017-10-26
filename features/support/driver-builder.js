@@ -29,7 +29,9 @@ var buildAndroidDriver = function () {
     deviceName: 'KG iPhone 6S 2017',
     browserName: 'Safari',
     udid: 'd053313f62447d51317a89857fbf6e9075c3433b',
-    safariInitialUrl: 'https://demo-multichannel-core.multichannel.kg/'
+    automationName: 'XCUITest',
+    xcodeOrgId: 'PN9EQHB9KD',
+    xcodeSigningId: 'Lizzie Hiles'
   }).build()
 }
 

@@ -7,7 +7,8 @@
     "test": "grunt",
     "cucumber": "cucumber-js",
     "runReport": "grunt clean && grunt cucumberjs && cucumberjs",
-    "startServer": "appium -a 127.0.0.1 -p 4723 --no-reset"
+    "startServer": "appium -a 127.0.0.1 -p 4723 --no-reset",
+    "startIos": "ios_webkit_debug_proxy -c d053313f62447d51317a89857fbf6e9075c3433b:27753"
   },
   "author": "Lizzie Hiles",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "selenium-webdriver": "^2.53.2"
   },
   "dependencies": {
+    "appium": "^1.7.1",
     "appium-webdriveragent-driver": "^1.0.0",
     "safari-launcher": "^2.0.5",
     "webdriveragent": "^1.1.6"
