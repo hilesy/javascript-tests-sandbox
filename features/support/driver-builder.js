@@ -1,7 +1,7 @@
 'use strict'
 
 var webdriver = require('selenium-webdriver'),
-   platform = process.env.PLATFORM || 'ANDROID',
+   platform = process.env.PLATFORM || 'SAFARIMOBILE',
     username = "lizziehiles2110",
     accessKey = "a355568e-fd7a-4a9f-b776-fd3453caf9ca",
     driver;
@@ -22,7 +22,7 @@ var webdriver = require('selenium-webdriver'),
 //               "@ondemand.saucelabs.com:80/wd/hub").
 //   build();
 
-var buildAndroidDriver = function () {
+var buildSafariMobileDriver = function () {
   return new webdriver.Builder().usingServer('http://localhost:4723/wd/hub').withCapabilities({
     platformName: 'iOS',
     platformVersion: '10.2.1',
@@ -46,6 +46,9 @@ var buildFirefoxDriver = function () {
 switch (platform) {
   case 'ANDROID':
     var driver = buildAndroidDriver()
+    break
+  case 'SAFARIMOBILE':
+    var driver = buildSafariMobileDriver()
     break
   case 'FIREFOX':
     var driver = buildFirefoxDriver()

@@ -1,7 +1,7 @@
 'use strict'
 
 const driver = require('../support/driver-builder.js').getDriver()
-var By = require('selenium-webdriver').By
+var webdriver = require('selenium-webdriver')
 
 module.exports = {
   inputUserName: () => {
@@ -20,10 +20,9 @@ module.exports = {
     },
 
   selectUser: () => {
-    driver.sleep(10000)
-    driver.findElement(By.partialLinkText("orlagh"))
+    driver.wait(webdriver.until.elementLocated(webdriver.By.linkText("orlagh")), 10000)
+    driver.findElement(webdriver.By.linkText("orlagh"))
       .click()
-    console.log("clicked")
     }
 }
 
