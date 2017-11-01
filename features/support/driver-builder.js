@@ -1,7 +1,7 @@
 'use strict'
 
 var webdriver = require('selenium-webdriver'),
-    platform = process.env.PLATFORM || 'SAFARIMOBILE'
+    platform = process.env.PLATFORM || 'CRHOME'
     driver;
 
   var getDriver = function () {
@@ -29,7 +29,7 @@ var buildIphoneSimulator = function () {
     browserName: 'Safari',
     udid: '25CA6CA9-7D93-4020-B20F-9B8846F81670',
   }).build()
-}, 
+} 
 
 var buildAndroidMobileDriver = function () {
   return new webdriver.Builder().usingServer('http://localhost:4723/wd/hub').withCapabilities({
@@ -39,7 +39,7 @@ var buildAndroidMobileDriver = function () {
     browserName: '',
     udid: '',
   }).build()
-}, 
+} 
 
 
 var buildChromeDriver = function () {
