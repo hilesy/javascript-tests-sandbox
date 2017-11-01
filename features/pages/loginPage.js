@@ -5,6 +5,7 @@ var webdriver = require('selenium-webdriver')
 
 module.exports = {
   inputUserName: () => {
+    driver.wait(webdriver.until.elementLocated(webdriver.By.id('username')), 10000)
     driver.findElement({id: 'username'})
       .sendKeys('branch.555')
   },

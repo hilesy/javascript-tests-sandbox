@@ -13,7 +13,7 @@ this.Given(/^I log in to the multi channel app$/, () => {
 })
 
 this.When(/^I search for boots$/, () => {
-  driver.sleep(1000)
+  driver.sleep(10000)
   search.clickSearchBar()
   search.enterSearchTerm()
   search.clickSearchProducts()
@@ -21,5 +21,6 @@ this.When(/^I search for boots$/, () => {
 
 this.When(/^I should see a list of items$/, () => {
   search.getProductList()
+  search.clickRandomProduct();
 })
 }

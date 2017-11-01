@@ -8,7 +8,7 @@
     "cucumber": "cucumber-js",
     "runReport": "grunt clean && grunt cucumberjs && cucumberjs",
     "startServer": "appium -a 127.0.0.1 -p 4723 --no-reset",
-    "startIos": "ios_webkit_debug_proxy -c d053313f62447d51317a89857fbf6e9075c3433b:27753"
+    "startIos": "ios_webkit_debug_proxy -c 3b7c61b30d8424d4fce9d74370fb2f8952709aa4:27753"
   },
   "author": "Lizzie Hiles",
   "license": "ISC",

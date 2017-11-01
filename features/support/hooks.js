@@ -10,6 +10,7 @@ var driver = require('./driver-builder.js').getDriver()
 var myHooks = function () {
   // Before Feature Hook to open webpage
   this.Before('BeforeFeature', function (event, callback) {
+    driver.manage().deleteAllCookies()
     driver.get('https://demo-multichannel-core.multichannel.kg/')
     driver.sleep(10000).then(callback, function (reason) {
       throw new Error(reason)
