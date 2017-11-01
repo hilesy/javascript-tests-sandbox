@@ -1,11 +1,7 @@
 'use strict'
 
 var webdriver = require('selenium-webdriver'),
-   platform = process.env.PLATFORM || 'SAFARIMOBILE'
-
-    // Saucelabs credentials
-    // username = "lizziehiles2110",
-    // accessKey = "a355568e-fd7a-4a9f-b776-fd3453caf9ca",
+    platform = process.env.PLATFORM || 'SAFARIMOBILE'
     driver;
 
   var getDriver = function () {
@@ -33,7 +29,18 @@ var buildIphoneSimulator = function () {
     browserName: 'Safari',
     udid: '25CA6CA9-7D93-4020-B20F-9B8846F81670',
   }).build()
-}
+}, 
+
+var buildAndroidMobileDriver = function () {
+  return new webdriver.Builder().usingServer('http://localhost:4723/wd/hub').withCapabilities({
+    platformName: '',
+    platformVersion: '',
+    deviceName: '',
+    browserName: '',
+    udid: '',
+  }).build()
+}, 
+
 
 var buildChromeDriver = function () {
   return new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build()
@@ -60,13 +67,21 @@ switch (platform) {
   case 'SAFARI':
     var driver = buildSafariDriver()
     break
+  case 'ANDROID':
+    var driver = buildAndroidMobileDriver()
+    break
   default:
     var driver = buildChromeDriver()
 }
 
 module.exports.getDriver = getDriver
 
-// This needs to be added for saucelabs 
+
+
+// This needs to be added for saucelabs
+// Saucelabs credentials
+// username = "lizziehiles2110",
+// accessKey = "a355568e-fd7a-4a9f-b776-fd3453caf9ca",
 
 // driver = new webdriver.Builder().
 //   withCapabilities({
