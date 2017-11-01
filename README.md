@@ -4,7 +4,7 @@ To get the automation suite up and running,
 
 
 Running the suite on a mobile device:  
-To make sure you have all the dependancies installed for appium you can run the following commands:   
+To make sure you have all the dependancies installed for appium you can run the following commands from the project root in terminal:   
 ```appium-doctor --ios```  
 ```appium-doctor --android```  
 ```appium-doctor --dev```  
@@ -15,9 +15,9 @@ Running tests on an android device:
 First you will need to make sure you have Android Studio installed and added to your path. You will also need to make sure USB debugging is enabled in Developer Options on your device. Before running the test, you will need to update the driver-builder.js file with the credentials to match the device you are using within the buildAndroidDriver function.  
 In the root of the project start the app server using ```npm run startServer```  
 If everything is ok you should see a message like 'Appium REST http interface listener started on 127.0.0.1:4723'.  
-Keeping the server terminal open, in a new terminal tab you can run your tests using one of the following commands:  
-```npm run test``` which will run javascript linting and cucumber tests  
+Keeping the server terminal open, in a new terminal tab you can run your tests using one of the following commands from the project root:  
 ```npm run cucumber``` which will run cucumber tests only  
+```npm run test``` which will run javascript linting and cucumber tests  
 ```npm run runReport``` which will run the cucumber tests, generate a report and also take any screenshots if a test has failed.  
 
 
@@ -25,7 +25,7 @@ Running the tests iOS simulator:
 First you will need to make sure you have Xcode installed and added to your path. Once you have Xcode installed, choose the device you want to run the test on. To do this go to Window > Devices. When you haven chosen the device, update the config in the driver-builder.js file to match.  
 In the root of the project start the app server using ```npm run startServer```  
 If everything is ok you should see a message like 'Appium REST http interface listener started on 127.0.0.1:4723'.  
-Keeping the server terminal open, in a new terminal tab you can run your tests using one of the following commands:  
+Keeping the server terminal open, in a new terminal tab you can run your tests using one of the following commands from the project root:  
 ```npm run test``` which will run javascript linting and cucumber tests  
 ```npm run cucumber``` which will run cucumber tests only  
 ```npm run runReport``` which will run the cucumber tests, generate a report and also take any screenshots if a test has failed.  
@@ -54,9 +54,8 @@ Open the Xcode project (Under the WebDriverAgent folder)
 - (You may need to do the same for Safari-Launcher)
 
 In the root of the project start the appium app server using ```npm run startServer```  
-In a new tab start the ios_webkit_debug_proxy_server using ```npm run startIos``` << (you will need to change the id in the package.json) to match the id of the device you're using.
-In in a new tab you can run the tests as before using npm run test.
-
+In a new tab start the ios_webkit_debug_proxy_server using ```npm run startIos``` << (you will need to change the UDID of the device in the package.json) to match the id of the device you're using.
+In in a new tab you can run the tests as before using npm run test from project root.
 
 
 Running tests on Saucelabs  
@@ -82,5 +81,17 @@ In the terminal, enter source ~/.bash_profile.
 TO RUN TESTS IN PARALELL ON SAUCELABS DOWNLOAD SOURCE CONNECT
 WHEN YOU HAVE DOWNLOADED SOURCE CONNECT RUN THE FOLLOWING IN DOWNLOAD PATH (MAC):
 ```bin/sc -u <username> -k <accesskey>```
+
+
+
+
+
+
+
+TODO:
+- clearing cache on ios devices using selenium
+- figure out issue with firefox driver & safari driver with latest browser versions
+- set up selenium grid
+
 
 
