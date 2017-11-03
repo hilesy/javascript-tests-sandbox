@@ -1,8 +1,7 @@
 'use strict'
 
 var webdriver = require('selenium-webdriver'),
-    platform = process.env.PLATFORM || 'CRHOME'
-    driver;
+    platform = process.env.PLATFORM || 'SAFARIMOBILE'
 
   var getDriver = function () {
     return driver
@@ -82,6 +81,7 @@ module.exports.getDriver = getDriver
 // Saucelabs credentials
 // username = "lizziehiles2110",
 // accessKey = "a355568e-fd7a-4a9f-b776-fd3453caf9ca",
+//    driver;
 
 // driver = new webdriver.Builder().
 //   withCapabilities({
